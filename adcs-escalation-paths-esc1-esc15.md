@@ -14,47 +14,6 @@ This post maps every known ESC path, organized by exploitability and grouped by 
 
 ---
 
-## ESC Attack Surface Map
-
-```mermaid
-flowchart TD
-    A[Low-Priv Domain User] --> B{Attack Class}
-
-    B --> C[Template Misconfiguration]
-    B --> D[ACL / Permission Abuse]
-    B --> E[NTLM Relay]
-    B --> F[Cert Binding Weakness]
-    B --> G[Post-Compromise / Physical]
-    B --> H[Identity-Based]
-
-    C --> C1[ESC1 - SAN Spoofing]
-    C --> C2[ESC2 - Any Purpose EKU]
-    C --> C3[ESC3 - Enrollment Agent]
-    C --> C4[ESC6 - CA-Wide SAN Flag]
-    C --> C5[ESC15 - CVE-2024-49019]
-
-    D --> D1[ESC4 - Write on Template]
-    D --> D2[ESC5 - Write on PKI Objects]
-    D --> D3[ESC7 - ManageCA Rights]
-
-    E --> E1[ESC8 - Relay to HTTP certsrv]
-    E --> E2[ESC11 - Relay to RPC ICPR]
-
-    F --> F1[ESC9 - No Security Extension]
-    F --> F2[ESC10 - Weak Registry Mapping]
-    F --> F3[ESC14 - altSecurityIdentities Write]
-
-    G --> G1[ESC12 - Shell on CA, Extract Key]
-    H --> H1[ESC13 - OID Group Link]
-
-    C1 --> Z[Domain Admin / DCSync]
-    D1 --> Z
-    E1 --> Z
-    G1 --> Z
-```
-
----
-
 ## ESC Paths by Exploitability
 
 | Rank | ESC | Name | Prevalence | Complexity |
